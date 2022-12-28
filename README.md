@@ -14,7 +14,7 @@ While recent advancements in artificial intelligence (AI) language models demons
  3) rename the json file to "translation.json"
 
 #### using the package:
-1) pip install the package (!pip install multi-lingual-storytelling-dall-e)
+1) pip install the package (!pip install multi-lingual-storytelling-dall-e , see package here https://pypi.org/project/multi-lingual-storytelling-dall-e/)
 2) import the package
 3) run song2images([name of text file], parameters)
 4) You will find the set of images in the folder 'images' under the current directory
