@@ -31,7 +31,7 @@ import glob
 import matplotlib.pyplot as plt
 import keras_ocr
 import cv2
-import math
+
 
     
 #%% Global Inputs
@@ -50,7 +50,10 @@ basic_path = os.getcwd()
 loc_defined = True
 
 # google translate and openai keys
-json_path = basic_path + os.sep + 'translate.json'
+path_json = input('type the location of the translation json file (empty for current directory)')
+if len(path_json) == 0:
+     path_json =     basic_path
+json_path =  path_json + os.sep + 'translate.json'
 credentials = service_account.Credentials.from_service_account_file(json_path)
 openai.api_key = input('please type your openai key')
 
@@ -589,7 +592,7 @@ def from_hebrew_prompt_to_img(prompt_original = 'שלום לכולם',  size = "
  
 def song2images(song_words,window_size = 6, overlap = 2, addition = ' , ציור צבעוני' , saving_add= '', div_num = 1,
                 min_thres_sim = 0.8, cont = True, initial_image = [],level_change = 1, n=1,original_lang = 'he',
-                path_save_res = path_images, topic = '',  remove_text = True, cut_by_line = False, reps = 1,remove_first_word = False,
+                path_save_res = path_images, topic = 'storytelling',  remove_text = True, cut_by_line = False, reps = 1,remove_first_word = False,
                 type_web = 'science', name_article = '',  start_from_p = 0, end_in_p = 0,pair_lines = False, diffuse = True,
                 multi = False, n_multi = 4, color_style = 'cymk', level = 0, level_center = 0, repeat = 1, object_det = False, full_box = False,
                 thres_white = 230,object_det_percent = 40, remove_dots_oject = True, percent_remove_obj = 0.1, background_increase = False,control_eli = False,
@@ -1277,7 +1280,7 @@ def inpaint_text(img =[] , img_path = [], pipeline = pipeline, return_PIL = True
         x_mid0, y_mid0 = midpoint(x1, y1, x2, y2)
         x_mid1, y_mi1 = midpoint(x0, y0, x3, y3)
         
-        thickness = int(math.sqrt( (x2 - x1)**2 + (y2 - y1)**2 ))
+        thickness = int( ( (x2 - x1)**2 + (y2 - y1)**2 )**0.5 )
         
         cv2.line(mask, (x_mid0, y_mid0), (x_mid1, y_mi1), 255,    
         thickness)
