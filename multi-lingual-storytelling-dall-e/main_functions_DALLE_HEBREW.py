@@ -1330,13 +1330,7 @@ def web2str(type_web = 'science', name_article = '',  start_from_p = 0, end_in_p
        print('dna 2: https://davidson.weizmann.ac.il/online/maagarmada/life_sci/%D7%90%D7%99%D7%9A-%D7%AA%D7%90%D7%99%D7%9D-%D7%9E%D7%AA%D7%97%D7%9C%D7%A7%D7%99%D7%9D-%D7%9E%D7%99%D7%98%D7%95%D7%96%D7%94 , div3')
        print('dna3: https://davidson.weizmann.ac.il/online/askexpert/%D7%9E%D7%97%D7%A1%D7%9F-%D7%94%D7%9E%D7%99%D7%93%D7%A2-%D7%94%D7%AA%D7%95%D7%A8%D7%A9%D7%AA%D7%99 , div2')
        print('mendel: https://davidson.weizmann.ac.il/online/maagarmada/life_sci/%d7%99%d7%a1%d7%95%d7%93%d7%95%d7%aa%20%d7%94%d7%92%d7%a0%d7%98%d7%99%d7%a7%d7%94%20%e2%80%93%20%d7%97%d7%95%d7%a7%d7%99%20%d7%9e%d7%a0%d7%93%d7%9c , div2')
-       #https://davidson.weizmann.ac.il/column/askexpert?page=5
-       #https://davidson.weizmann.ac.il/online/askexpert/%D7%90%D7%99%D7%9A-%D7%A0%D7%95%D7%A6%D7%A8%D7%99%D7%9D-%D7%9B%D7%95%D7%9B%D7%91%D7%99-%D7%9C%D7%9B%D7%AA-%D7%92%D7%96%D7%99%D7%99%D7%9D
-       # https:// davidson.weizmann.ac.il/online/askexpert/%D7%9E%D7%97%D7%A1%D7%9F-%D7%94%D7%9E%D7%99%D7%93%D7%A2-%D7%94%D7%AA%D7%95%D7%A8%D7%A9%D7%AA%D7%99
-       # https://davidson.weizmann.ac.il/online/askexpert/%D7%A4%D7%A1-%D7%94%D7%99%D7%99%D7%A6%D7%95%D7%A8-%D7%A9%D7%9C-%D7%94%D7%AA%D7%90
-       #https://davidson.weizmann.ac.il/online/askexpert/%D7%94%D7%96%D7%99%D7%94%D7%95%D7%9D-%D7%94%D7%92%D7%93%D7%95%D7%9C-%D7%A9%D7%9C-%D7%9B%D7%93%D7%95%D7%A8%D7%99-%D7%94%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7-%D7%94%D7%A7%D7%98%D7%A0%D7%99%D7%9D 
-       # https://davidson.weizmann.ac.il/online/askexpert/%D7%9E%D7%97%D7%A1%D7%9F-%D7%94%D7%9E%D7%99%D7%93%D7%A2-%D7%94%D7%AA%D7%95%D7%A8%D7%A9%D7%AA%D7%99
-       #
+
        text_from_web =  call_web(type_web, name_article, div_num = div_num)
    elif type_web == 'song' :
        
@@ -1367,27 +1361,27 @@ def path2nums(path):
     return opts_org
 
     
-def create_gif(images = [], path = '.', duration = 300, reps = 15, path_save = r'.', name_save = 'gif',max_images = 90,
-               base_name = 'A', reorder = True, reorder2 = False):
+def create_gif(images = [], path = '.', duration = 300, reps = 15, path_save = r'.', name_save = 'gif',
+               max_images = 90,
+               base_name = 'A', reorder = True, reorder2 = True):
     if checkEmptyList(images):
         if path == '':
             #path = r'C:\Users\14434\Documents\GitHub\DALL-E-Hebrew\FIGURES FOR PAPER\good sections\YEKUM_w_numbers'
             raise ValueError('path should not be empty')
         images = glob.glob(path + os.sep + '*.png')
-        #print(images)
+
         images = np.sort(images)
         if reorder:
-            #images = np.sort(images)
+
             max_img = len(images)
             images = [path + os.sep + '%s ('%base_name + str(num) + ').png' for num in np.arange(1, max_img + 1)]
         if reorder2:
             images = path2nums(path)
-            #print(images)
-        #print(images)
+
         if len(images) > max_images:
             images = images[:max_images]
         images_read = [plt.imread(path)*255 for path in images]#lists2list([[plt.imread(path)]*reps for path in images])
-        #step = 1/reps
+
     else:
         images_read = images    
     
@@ -1511,10 +1505,10 @@ def show_image_based_on_path(path, with_labels = False, ax = []):
     
     
 def create_subplots_fig(path = '', num_cols = 6, max_images = 50, reorder = False, dur = 0.2,interval = 5,
-                        fig = [], axs = [],with_labels = False, title = '', base_name = 'A', reorder2 = False,size_dec=100,
-                        path_save =r'C:\Users\14434\Documents\GitHub\DALL-E-Hebrew\FIGURES FOR PAPER\stacked_save' , flow = False):
+                        fig = [], axs = [],with_labels = False, title = 'subplots', base_name = 'A', reorder2 = True,size_dec=100,
+                        path_save =basic_path , flow = False):
     if path == '':
-        path = r'C:\Users\14434\Documents\GitHub\DALL-E-Hebrew\FIGURES FOR PAPER\good sections\YEKUM_w_numbers'
+        path =basic_path
     images = glob.glob(path + os.sep + '*.png')
     images = np.sort(images)
     #print(images)
