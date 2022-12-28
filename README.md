@@ -1,3 +1,5 @@
+to install, please visit https://pypi.org/project/multi-lingual-storytelling-dall-e/ (!pip install multi-lingual-storytelling-dall-e)
+
 # multi-lingual-storytelling-dall-e
 
 Mudrik, N., Charles, A., “Multi-Lingual DALL-E Storytime”. Arxiv. (2022). https://arxiv.org/abs/2212.11985
@@ -12,7 +14,7 @@ While recent advancements in artificial intelligence (AI) language models demons
  3) rename the json file to "translation.json"
 
 #### using the package:
-1) pip install the package 
+1) pip install the package (!pip install multi-lingual-storytelling-dall-e)
 2) import the package
 3) run song2images([name of text file], parameters)
 4) You will find the set of images in the folder 'images' under the current directory
