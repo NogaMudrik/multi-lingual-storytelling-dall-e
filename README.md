@@ -4,7 +4,40 @@ to install, please visit https://pypi.org/project/multi-lingual-storytelling-dal
 
 Mudrik, N., Charles, A., “Multi-Lingual DALL-E Storytime”. Arxiv. (2022). https://arxiv.org/abs/2212.11985
 
-While recent advancements in artificial intelligence (AI) language models demonstrate cutting-edge performance when working with English texts, equivalent models do not exist in other languages or do not reach the same performance level. This undesired effect of AI advancements increases the gap between access to new technology from different populations across the world. This unsought bias mainly discriminates against individuals whose English skills are less developed, e.g., non-English speakers children. Following significant advancements in AI research in recent years, OpenAI has recently presented DALL-E: a powerful tool for creating images based on English text prompts. While DALL-E is a promising tool for many applications, its decreased performance when given input in a different language, limits its audience and deepens the gap between populations. An additional limitation of the current DALL-E model is that it only allows for the creation of a few images in response to a given input prompt, rather than a series of consecutive coherent frames that tell a story or describe a process that changes over time. Here, we present an easy-to-use automatic DALL-E storytelling framework that leverages the existing DALL-E model to enable fast and coherent visualizations of non-English songs and stories, pushing the limit of the one-step-at-a-time option DALL-E currently offers. We show that our framework is able to effectively visualize stories from non-English texts and portray the changes in the plot over time. It is also able to create a narrative and maintain interpretable changes in the description across frames. Additionally, our framework offers users the ability to specify constraints on the story elements, such as a specific location or context, and to maintain a consistent style throughout the visualization.
+Visualizations are a vital tool in the process of
+education, playing a critical role in helping individuals com-
+prehend and retain information. With the recent advancements
+in artificial intelligence and automatic visualization tools, such
+as OpenAI’s DALL-E, the ability to generate images based
+on text prompts has been greatly improved. However, these
+advancements present a significant challenge for populations
+with limited English proficiency, exacerbating the educational
+divide between children from different backgrounds and limiting
+their access to new technology. Here, we introduce a DALL-E
+storytelling framework designed to facilitate the fast and coherent
+visualization of non-English songs, stories, and biblical texts.
+Our framework extends the original DALL-E model to handle
+non-English input and allows users to specify constraints on
+story elements, such as a specific location or context. The key
+advantage of our framework over manual editing of DALL-E
+images is that it offers a more seamless and intuitive experience
+for the user, as well as automates the process, thus eliminating the
+time-consuming and technical-expertise-requiring manual editing
+process. The visualization masks are automatically adjusted to
+form a coherent story, ensuring that the figures and objects in
+each frame are consistent and maintain their meaning throughout
+the visualization, allowing for a much smoother experience for
+the viewer. Our results demonstrate that our framework is
+capable of effectively and quickly visualizing stories in a coherent
+way, conveying changes in the plot over time, and creating a
+narrative with a consistent style throughout the visualization. By
+enabling the visualization of non-English texts, our framework
+helps bridge the gap between populations and promotes equal
+access to technology and education, particularly for children and
+individuals who struggle with understanding complex narrative
+texts, such as fast-paced songs and biblical stories. This holds
+the potential to greatly enhance literacy and foster a deeper
+understanding of these important texts.
 
 
 ### How to use?
